@@ -21,7 +21,7 @@ def chat():
     user_message = user_data.get("message")
 
     response = client.models.generate_content(
-        model="gemini-1.5-flash",
+        model="gemini-3.0-flash",
         contents=user_message,
         config={
             "system_instruction": """
@@ -38,4 +38,5 @@ def chat():
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
+
     app.run(host='0.0.0.0', port=port)
